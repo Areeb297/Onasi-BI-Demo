@@ -52,18 +52,28 @@ export function AdvancedSidebar({
         className
       )}
     >
-      {/* Sidebar header */}
-      <div className="flex items-center justify-between p-4 border-b border-sidebar-border">
-        {!collapsed && (
-          <h2 className="text-lg font-semibold">Healthcare BI</h2>
+      {/* Sidebar header with Onasi logo */}
+      <div className="flex items-center p-4 border-b border-sidebar-border relative">
+        {collapsed ? (
+          <img
+            src="/onasi_compacted_logo.png"
+            alt="Onasi"
+            className="h-8 w-8 mx-auto object-contain"
+          />
+        ) : (
+          <img
+            src="/Onasi_logo.png"
+            alt="Onasi"
+            className="h-8 object-contain"
+          />
         )}
         <Button
           variant="ghost"
           size="icon"
           onClick={toggleCollapse}
-          className={cn("ml-auto", collapsed && "mx-auto")}
+          className="absolute -right-3 top-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-sidebar border border-sidebar-border shadow-sm hover:bg-muted"
         >
-          {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
+          {collapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
         </Button>
       </div>
 

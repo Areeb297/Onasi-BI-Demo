@@ -28,11 +28,11 @@ const PayerPerformanceTable = ({ payerData }) => {
             </thead>
             <tbody>
               {payerData.map((payer, index) => (
-                <tr key={index} className="border-b border-border hover:bg-gray-50">
+                <tr key={index} className="border-b border-border hover:bg-muted/50 transition-colors">
                   <td className="p-3 font-medium">{payer.payer}</td>
                   <td className="p-3 text-right">
                     <div className="flex items-center justify-end">
-                      <Clock className="w-4 h-4 mr-1 text-gray-400" />
+                      <Clock className="w-4 h-4 mr-1 text-muted-foreground" />
                       {payer.avgReimbursementDays} days
                     </div>
                   </td>
