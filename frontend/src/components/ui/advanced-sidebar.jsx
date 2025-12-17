@@ -53,7 +53,7 @@ export function AdvancedSidebar({
       )}
     >
       {/* Sidebar header with Onasi logo */}
-      <div className="flex items-center p-4 border-b border-sidebar-border relative">
+      <div className="flex items-center p-4 border-b border-sidebar-border">
         {collapsed ? (
           <img
             src="/onasi_compacted_logo.png"
@@ -61,21 +61,35 @@ export function AdvancedSidebar({
             className="h-8 w-8 mx-auto object-contain"
           />
         ) : (
-          <img
-            src="/Onasi_logo.png"
-            alt="Onasi"
-            className="h-8 object-contain"
-          />
+          <div className="flex items-center justify-between w-full">
+            <img
+              src="/Onasi_logo.png"
+              alt="Onasi"
+              className="h-8 object-contain"
+            />
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleCollapse}
+              className="h-7 w-7 rounded-md hover:bg-muted"
+            >
+              <ChevronLeft size={16} />
+            </Button>
+          </div>
         )}
+      </div>
+
+      {/* Collapse toggle for collapsed state */}
+      {collapsed && (
         <Button
           variant="ghost"
           size="icon"
           onClick={toggleCollapse}
-          className="absolute -right-3 top-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-sidebar border border-sidebar-border shadow-sm hover:bg-muted"
+          className="mx-auto mt-2 h-7 w-7 rounded-md hover:bg-muted"
         >
-          {collapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
+          <ChevronRight size={16} />
         </Button>
-      </div>
+      )}
 
       {/* Main Navigation */}
       <div className="flex-1 py-2">
