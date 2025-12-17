@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__render__list_workspaces",
+      "WebFetch(domain:render.com)",
+      "Bash(claude mcp list:*)",
+      "mcp__render__create_web_service",
+      "mcp__render__create_static_site",
+      "mcp__render__get_deploy"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DEPLOYMENT_GUIDE.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DEPLOYMENT_GUIDE"
+              "title": "README"
             }
           }
         ]
@@ -168,6 +168,11 @@
   },
   "active": "8528669d7c9a96e2",
   "lastOpenFiles": [
+    "frontend/node_modules/rollup/node_modules/fsevents",
+    "frontend/node_modules/rollup/node_modules",
+    "frontend/node_modules/jest-haste-map/node_modules/fsevents",
+    "frontend/node_modules/jest-haste-map/node_modules",
+    "DEPLOYMENT_GUIDE.md",
     "frontend/node_modules/whatwg-encoding/node_modules",
     "frontend/node_modules/workbox-webpack-plugin/node_modules",
     "frontend/node_modules/workbox-build/node_modules",
@@ -175,10 +180,6 @@
     "frontend/node_modules/webpack-manifest-plugin/node_modules",
     "frontend/node_modules/webpack-dev-server/node_modules",
     "frontend/node_modules/webpack/node_modules",
-    "frontend/node_modules/v8-to-istanbul/node_modules",
-    "frontend/node_modules/tsutils/node_modules",
-    "frontend/node_modules/tsconfig-paths/node_modules",
-    "frontend/node_modules/tough-cookie/node_modules",
     "README.md",
     "frontend/node_modules/send/node_modules/debug/node_modules/ms/readme.md",
     "frontend/node_modules/send/node_modules/debug/node_modules/ms/license.md",
@@ -202,7 +203,6 @@
     "backend/node_modules/side-channel-weakmap/README.md",
     "backend/node_modules/side-channel-weakmap/CHANGELOG.md",
     "backend/node_modules/statuses/README.md",
-    "backend/node_modules/statuses/HISTORY.md",
-    "backend/node_modules/side-channel/README.md"
+    "backend/node_modules/statuses/HISTORY.md"
   ]
 }
