@@ -25,17 +25,17 @@ const DeptPaidDeniedChart = ({ deptPaidDeniedData }) => {
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="dept" tick={{ fontSize: '0.7rem', className: 'dashboard-tick-xs' }} />
-              <YAxis tick={{ fontSize: '0.7rem', className: 'dashboard-tick-xs' }} />
-              <Tooltip 
+              <XAxis dataKey="dept" tick={{ fontSize: '0.7rem', fill: 'currentColor' }} className="text-foreground" />
+              <YAxis tick={{ fontSize: '0.7rem', fill: 'currentColor' }} className="text-foreground" />
+              <Tooltip
                 wrapperStyle={{ fontSize: '0.7rem' }}
                 content={({ active, payload, label }) => {
                   if (active && payload && payload.length) {
                     return (
-                      <div className="bg-white p-2 border border-gray-200 shadow-md rounded-md">
-                        <p className="text-gray-600 font-medium">{label} Department</p>
+                      <div className="bg-card text-card-foreground p-2 border border-border shadow-md rounded-md">
+                        <p className="text-muted-foreground font-medium">{label} Department</p>
                         {payload.map((entry, index) => (
-                          <p key={index} className="text-gray-900">
+                          <p key={index} className="text-card-foreground">
                             <span style={{ color: entry.color }}>{entry.name}: </span>
                             <span className="flex items-center">
                               {formatCurrency(entry.value)}

@@ -37,7 +37,15 @@ const ClaimStatusChart = ({ claimStatusData, onStatusClick }) => {
                   <Cell key={`cell-${index}`} fill={`var(--chart-${(index % 8) + 1})`} />
                 ))} // Use up to 8 chart color variables, cycle as needed.
               </Pie>
-              <Tooltip formatter={(value) => formatNumber(value)} />
+              <Tooltip
+                formatter={(value) => formatNumber(value)}
+                contentStyle={{
+                  backgroundColor: 'var(--card)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '0.375rem',
+                  color: 'var(--card-foreground)'
+                }}
+              />
             </PieChart>
           </ResponsiveContainer>
         ) : (

@@ -24,18 +24,18 @@ const ReimbursementTimeDistributionChart = ({ reimbursementTimeData }) => {
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="range" label={{ value: 'Days', position: 'insideBottomRight', offset: -5 }} tick={{ fontSize: '0.7rem', className: 'dashboard-tick-xs' }} />
-              <YAxis label={{ value: 'Number of Claims', angle: -90, position: 'insideLeft' }} tick={{ fontSize: '0.7rem', className: 'dashboard-tick-xs' }} />
+              <XAxis dataKey="range" label={{ value: 'Days', position: 'insideBottomRight', offset: -5, fill: 'currentColor' }} tick={{ fontSize: '0.7rem', fill: 'currentColor' }} className="text-foreground" />
+              <YAxis label={{ value: 'Number of Claims', angle: -90, position: 'insideLeft', fill: 'currentColor' }} tick={{ fontSize: '0.7rem', fill: 'currentColor' }} className="text-foreground" />
               <Tooltip
                 wrapperStyle={{ fontSize: '0.7rem' }}
                 content={({ active, payload }) => {
                   if (active && payload && payload.length) {
                     return (
-                      <div className="dashboard-legend-xs compact">
+                      <div className="bg-card text-card-foreground p-2 border border-border shadow-md rounded-md">
                         {payload.map((item, index) => (
-                          <div key={index} className="dashboard-label-xs">
-                            <span className="dashboard-label-xs">{item.name}: </span>
-                            <span className="dashboard-label-xs">{item.value}</span>
+                          <div key={index}>
+                            <span className="text-muted-foreground">{item.name}: </span>
+                            <span className="text-card-foreground">{item.value}</span>
                           </div>
                         ))}
                       </div>
@@ -49,8 +49,8 @@ const ReimbursementTimeDistributionChart = ({ reimbursementTimeData }) => {
             </BarChart>
           </ResponsiveContainer>
         ) : (
-          <div className="flex items-center justify-center h-[300px] bg-gray-50 rounded-md">
-            <p className="text-gray-500">No reimbursement time data available</p>
+          <div className="flex items-center justify-center h-[300px] bg-card rounded-md">
+            <p className="text-muted-foreground">No reimbursement time data available</p>
           </div>
         )}
       </CardContent>

@@ -25,17 +25,17 @@ const PreAuthDenialsChart = ({ preAuthDenialsData }) => {
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="preAuthorization" tick={{ fontSize: '0.7rem', className: 'dashboard-tick-xs compact' }} />
-              <YAxis tick={{ fontSize: '0.7rem', className: 'dashboard-tick-xs compact' }} />
+              <XAxis dataKey="preAuthorization" tick={{ fontSize: '0.7rem', fill: 'currentColor' }} className="text-foreground" />
+              <YAxis tick={{ fontSize: '0.7rem', fill: 'currentColor' }} className="text-foreground" />
               <Tooltip
                 wrapperStyle={{ fontSize: '0.7rem' }}
                 content={({ active, payload, label }) => {
                   if (active && payload && payload.length) {
                     return (
-                      <div className="bg-white p-2 border border-gray-200 shadow-md rounded-md">
-                        <p className="text-gray-600 font-medium">Pre-Authorization: {label}</p>
+                      <div className="bg-card text-card-foreground p-2 border border-border shadow-md rounded-md">
+                        <p className="text-muted-foreground font-medium">Pre-Authorization: {label}</p>
                         {payload.map((entry, index) => (
-                          <p key={index} className="text-gray-900 flex items-center">
+                          <p key={index} className="text-card-foreground flex items-center">
                             <span style={{ color: entry.color }}>{entry.name}: </span>
                             {formatCurrency(entry.value)}
                             <SaudiRiyalSymbol className="ml-1" size={14} />

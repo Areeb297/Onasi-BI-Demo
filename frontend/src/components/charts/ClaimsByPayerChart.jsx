@@ -45,13 +45,13 @@ const ClaimsByPayerChart = ({ claimsByPayerData, dataKey = 'totalClaimAmount' })
                   if (active && payload && payload.length) {
                     const data = payload[0].payload;
                     return (
-                      <div className="bg-[var(--card)] p-2 border border-[var(--card-foreground)] shadow-md rounded-md dashboard-xs compact">
-                        <p className="text-[var(--card-foreground)] font-medium">{data.payer}</p>
-                        <p className="text-[var(--card-foreground)]">
+                      <div className="bg-card text-card-foreground p-2 border border-border shadow-md rounded-md">
+                        <p className="text-muted-foreground font-medium">{data.payer}</p>
+                        <p className="text-card-foreground">
                           <span>Total Claims: </span>
                           {formatNumber(data.numClaims)}
                         </p>
-                        <p className="text-[var(--card-foreground)] flex items-center">
+                        <p className="text-card-foreground flex items-center">
                           <span>Total Amount: </span>
                           {formatCurrency(data.totalClaimAmount)}
                           <SaudiRiyalSymbol className="ml-1" size={14} />

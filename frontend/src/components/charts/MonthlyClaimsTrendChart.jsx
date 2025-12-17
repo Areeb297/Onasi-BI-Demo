@@ -30,18 +30,18 @@ const MonthlyClaimsTrendChart = ({ data, trendType = 'monthly' }) => {
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="month" tick={{ fontSize: '0.7rem', className: 'dashboard-tick-xs' }} />
-              <YAxis yAxisId="left" />
-              <YAxis yAxisId="right" orientation="right" />
-              <Tooltip 
+              <XAxis dataKey="month" tick={{ fontSize: '0.7rem', fill: 'currentColor' }} className="text-foreground" />
+              <YAxis yAxisId="left" tick={{ fill: 'currentColor' }} className="text-foreground" />
+              <YAxis yAxisId="right" orientation="right" tick={{ fill: 'currentColor' }} className="text-foreground" />
+              <Tooltip
                 wrapperStyle={{ fontSize: '0.7rem' }}
                 content={({ active, payload, label }) => {
                   if (active && payload && payload.length) {
                     return (
-                      <div className="bg-white p-2 border border-gray-200 shadow-md rounded-md">
-                        <p className="text-gray-600 font-medium">{label}</p>
+                      <div className="bg-card text-card-foreground p-2 border border-border shadow-md rounded-md">
+                        <p className="text-muted-foreground font-medium">{label}</p>
                         {payload.map((entry, index) => (
-                          <p key={index} className="text-gray-900">
+                          <p key={index} className="text-card-foreground">
                             <span style={{ color: entry.color }}>{entry.name}: </span>
                             {entry.dataKey === 'totalAmount' ? (
                               <span className="flex items-center">

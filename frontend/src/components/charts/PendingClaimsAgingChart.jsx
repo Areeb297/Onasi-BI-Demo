@@ -24,11 +24,17 @@ const PendingClaimsAgingChart = ({ pendingClaimsAgingData }) => {
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" tick={{ fontSize: '0.5rem', className: 'dashboard-tick-xs compact' }} />
-              <YAxis tick={{ fontSize: '0.5rem', className: 'dashboard-tick-xs compact' }} />
+              <XAxis dataKey="name" tick={{ fontSize: '0.5rem', fill: 'currentColor' }} className="text-foreground" />
+              <YAxis tick={{ fontSize: '0.5rem', fill: 'currentColor' }} className="text-foreground" />
               <Tooltip
                 wrapperStyle={{ fontSize: '0.5rem' }}
                 formatter={(value) => [value, 'Claims']}
+                contentStyle={{
+                  backgroundColor: 'var(--card)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '0.375rem',
+                  color: 'var(--card-foreground)'
+                }}
               />
               <Legend wrapperStyle={{ fontSize: '0.5rem' }} className="dashboard-legend-xs compact" />
               <Bar dataKey="value" name="Claims" fill="var(--chart-1)" isAnimationActive={true} />

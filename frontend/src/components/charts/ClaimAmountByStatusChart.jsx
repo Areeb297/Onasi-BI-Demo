@@ -22,8 +22,8 @@ const ClaimAmountByStatusChart = ({ claimAmountByStatusData }) => {
           <ResponsiveContainer width="100%" height={220} minWidth={200} minHeight={180}>
             <BarChart data={claimAmountByStatusData}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="status" tick={{ fontSize: '0.7rem', className: 'dashboard-tick-xs' }} />
-              <YAxis tick={{ fontSize: '0.7rem', className: 'dashboard-tick-xs' }} />
+              <XAxis dataKey="status" tick={{ fontSize: '0.7rem', fill: 'currentColor' }} className="text-foreground" />
+              <YAxis tick={{ fontSize: '0.7rem', fill: 'currentColor' }} className="text-foreground" />
               <Tooltip 
                 wrapperStyle={{ fontSize: '0.7rem' }}
                 content={({ active, payload, label }) => {

@@ -25,17 +25,17 @@ const AvgClaimByCPTChart = ({ avgClaimByCPTData }) => {
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="cptCode" />
-              <YAxis />
-              <Tooltip 
+              <XAxis dataKey="cptCode" tick={{ fill: 'currentColor' }} className="text-foreground" />
+              <YAxis tick={{ fill: 'currentColor' }} className="text-foreground" />
+              <Tooltip
                 content={({ active, payload, label }) => {
                   if (active && payload && payload.length) {
                     return (
-                      <div className="bg-[var(--card)] p-2 border border-[var(--card-foreground)] shadow-md rounded-md">
-                        <p className="text-[var(--card-foreground)] font-medium">CPT Code: {label}</p>
+                      <div className="bg-card text-card-foreground p-2 border border-border shadow-md rounded-md">
+                        <p className="text-muted-foreground font-medium">CPT Code: {label}</p>
                         {payload.map((entry, index) => (
-                          <p key={index} className="text-[var(--card-foreground)] flex items-center">
-                            <span style={{ color: 'var(--chart-x)' }}>{entry.name}: </span>
+                          <p key={index} className="text-card-foreground flex items-center">
+                            <span style={{ color: entry.color }}>{entry.name}: </span>
                             {formatCurrency(entry.value)}
                             <SaudiRiyalSymbol className="ml-1" size={14} />
                           </p>

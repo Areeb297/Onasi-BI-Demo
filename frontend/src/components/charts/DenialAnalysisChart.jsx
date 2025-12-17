@@ -22,18 +22,18 @@ const DenialAnalysisChart = ({ data }) => {
           <ResponsiveContainer width="100%" height={220} minWidth={200} minHeight={180}>
             <ComposedChart data={data}>
               <CartesianGrid strokeDasharray="3 3" className="compact" />
-              <XAxis dataKey="reasonCode" tick={{ fontSize: '0.7rem', className: 'dashboard-tick-xs compact' }} />
-              <YAxis yAxisId="left" orientation="left" className="compact" />
-              <YAxis yAxisId="right" orientation="right" unit="%" className="compact" />
-              <Tooltip 
+              <XAxis dataKey="reasonCode" tick={{ fontSize: '0.7rem', fill: 'currentColor' }} className="text-foreground" />
+              <YAxis yAxisId="left" orientation="left" tick={{ fill: 'currentColor' }} className="text-foreground" />
+              <YAxis yAxisId="right" orientation="right" unit="%" tick={{ fill: 'currentColor' }} className="text-foreground" />
+              <Tooltip
                 wrapperStyle={{ fontSize: '0.7rem' }}
                 content={({ active, payload, label }) => {
                   if (active && payload && payload.length) {
                     return (
-                      <div className="bg-white p-2 border border-gray-200 shadow-md rounded-md compact">
-                        <p className="text-gray-600">{payload[0].payload.reasonCode}</p>
+                      <div className="bg-card text-card-foreground p-2 border border-border shadow-md rounded-md">
+                        <p className="text-muted-foreground">{payload[0].payload.reasonCode}</p>
                         {payload.map((entry, index) => (
-                          <p key={index} className="text-gray-900 font-medium compact">
+                          <p key={index} className="text-card-foreground font-medium">
                             <span style={{ color: entry.color }}>{entry.name}: </span>
                             {entry.name === 'Denied Amount' ? (
                               <span className="flex items-center">

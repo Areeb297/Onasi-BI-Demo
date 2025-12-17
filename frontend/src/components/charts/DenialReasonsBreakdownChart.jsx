@@ -33,24 +33,24 @@ const DenialReasonsBreakdownChart = ({ data, sortBy = 'amount' }) => {
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis 
+              <XAxis
                 dataKey="reason"
                 type="category"
                 interval={0}
-                tick={{ fontSize: '0.65rem', className: 'dashboard-tick-xs', angle: -40, textAnchor: 'end' }}
+                tick={{ fontSize: '0.65rem', fill: 'currentColor', angle: -40, textAnchor: 'end' }}
                 height={70}
-                className="dashboard-label-xs"
+                className="text-foreground"
               />
-              <YAxis type="number" tick={{ fontSize: '0.7rem', className: 'dashboard-tick-xs' }} className="dashboard-label-xs" />
-              <Tooltip 
-                wrapperStyle={{ fontSize: '0.7rem', className: 'dashboard-xs' }}
+              <YAxis type="number" tick={{ fontSize: '0.7rem', fill: 'currentColor' }} className="text-foreground" />
+              <Tooltip
+                wrapperStyle={{ fontSize: '0.7rem' }}
                 content={({ active, payload, label }) => {
                   if (active && payload && payload.length) {
                     return (
-                      <div className="bg-white p-2 border border-gray-200 shadow-md rounded-md">
-                        <p className="text-gray-600 font-medium">{label}</p>
+                      <div className="bg-card text-card-foreground p-2 border border-border shadow-md rounded-md">
+                        <p className="text-muted-foreground font-medium">{label}</p>
                         {payload.map((entry, index) => (
-                          <p key={index} className="text-gray-900">
+                          <p key={index} className="text-card-foreground">
                             <span style={{ color: entry.color }}>{entry.name}: </span>
                             {formatNumber(entry.value)}
                           </p>
