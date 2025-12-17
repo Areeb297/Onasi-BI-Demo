@@ -80,8 +80,8 @@ const MonthlyClaimsTrendChart = ({ data, trendType = 'monthly' }) => {
             </LineChart>
           </ResponsiveContainer>
         ) : (
-          <div className="flex items-center justify-center h-[300px] bg-gray-50 rounded-md">
-            <p className="text-gray-500">No monthly claims data available</p>
+          <div className="flex items-center justify-center h-[300px] bg-card rounded-md">
+            <p className="text-muted-foreground">No monthly claims data available</p>
           </div>
         )}
       </CardContent>

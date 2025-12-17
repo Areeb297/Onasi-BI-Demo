@@ -171,3 +171,36 @@
 body {
   @apply bg-background text-foreground;
 }
+
+/* Recharts dark mode fixes */
+.dark .recharts-tooltip-wrapper {
+  color: var(--foreground) !important;
+}
+
+.dark .recharts-default-tooltip {
+  background-color: var(--card) !important;
+  border-color: var(--border) !important;
+  color: var(--card-foreground) !important;
+}
+
+.dark .recharts-tooltip-label {
+  color: var(--muted-foreground) !important;
+}
+
+.dark .recharts-tooltip-item {
+  color: var(--card-foreground) !important;
+}
+
+.dark .recharts-tooltip-item-name,
+.dark .recharts-tooltip-item-value {
+  color: var(--card-foreground) !important;
+}
+
+.dark .recharts-legend-item-text {
+  color: var(--foreground) !important;
+}
+
+.dark .recharts-cartesian-grid-horizontal line,
+.dark .recharts-cartesian-grid-vertical line {
+  stroke: var(--border) !important;
+}

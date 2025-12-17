@@ -9,7 +9,24 @@ import { formatCurrency, formatNumber } from '../../utils/formatters';
 import SaudiRiyalSymbol from '../SaudiRiyalSymbol';
 
 const ClaimsByPayerChart = ({ claimsByPayerData, dataKey = 'totalClaimAmount' }) => {
-  const renderLabel = ({ name, percent }) => `${name.substring(0, 12)}${name.length > 12 ? '...' : ''}: ${(percent * 100).toFixed(0)}%`;
+  const renderLabel = ({ name, percent, cx, cy, midAngle, outerRadius }) => {
+    const RADIAN = Math.PI / 180;
+    const radius = outerRadius + 20;
+    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+    const displayName = name.substring(0, 12) + (name.length > 12 ? '...' : '');
+    return (
+      <text
+        x={x}
+        y={y}
+        textAnchor={x > cx ? 'start' : 'end'}
+        dominantBaseline="central"
+        style={{ fontSize: '0.65rem', fill: 'var(--foreground)' }}
+      >
+        {`${displayName}: ${(percent * 100).toFixed(0)}%`}
+      </text>
+    );
+  };
 
   return (
     <Card>

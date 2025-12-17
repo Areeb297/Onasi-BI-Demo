@@ -29,7 +29,25 @@ const ClaimStatusChart = ({ claimStatusData, onStatusClick }) => {
                 paddingAngle={1}
                 dataKey="count"
                 nameKey="status"
-                label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                label={({ name, percent, cx, cy, midAngle, outerRadius }) => {
+                  const RADIAN = Math.PI / 180;
+                  const radius = outerRadius + 25;
+                  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+                  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+                  return (
+                    <text
+                      x={x}
+                      y={y}
+                      fill="currentColor"
+                      className="text-foreground"
+                      textAnchor={x > cx ? 'start' : 'end'}
+                      dominantBaseline="central"
+                      style={{ fontSize: '0.7rem', fill: 'var(--foreground)' }}
+                    >
+                      {`${name}: ${(percent * 100).toFixed(0)}%`}
+                    </text>
+                  );
+                }}
                 onClick={onStatusClick}
                 isAnimationActive={true}
               >
